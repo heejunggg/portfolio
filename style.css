@@ -51,13 +51,18 @@ ul {
   list-style: none;
   padding-left: 0;
 }
+button {
+  background: transparent;
+  cursor: pointer;
+  border: none;
+}
 
 /* Typography */
 h1 {
   font-size: var(--font-large);
   font-weight: var(--weight-bold);
   color: var(--color-black);
-  margin: 16px 0px;
+  margin: 10px 0px;
 }
 h2 {
   font-size: var(--font-regular);
@@ -106,4 +111,33 @@ p {
 }
 .navbar_menu_item:hover {
   background-color: var(--color-dark-pink);
+}
+
+/* Home */
+#home {
+  background: url(./images/main-bg3.png) center/cover no-repeat;
+  text-align: center;
+}
+.home_avart {
+  width: 250px;
+  height: 250px;
+  transform: scale(80%);
+  background: url(./images/main_pic.png) center no-repeat;
+  margin: auto;
+}
+
+/*background: url(./images/main_pic.png) 0 100% / center/cover no-repeat;*/
+
+.home_title,
+.home_descriptin {
+  color: var(--color-pink);
+}
+.home_contact {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-bold);
+  color: var(--color-dark-grey);
+  margin: 24px;
+  padding: 8px 12px;
+  border: 2px solid var(--color-pink);
+  border-radius: var(--size-borer-radius);
 }
