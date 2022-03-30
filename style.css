@@ -148,10 +148,13 @@ p {
   /*공통적인것을 모아보자*/
   padding: 50px;
   text-align: center;
-  max-width: 1200px;
   margin: auto;
 }
-
+.section_description {
+  max-width: 1200px;
+  /* 그 안에 있는 글씨만 1200px까지만 적용하겠다.*/
+  margin: auto;
+}
 /* About */
 .about_majors {
   display: flex;
@@ -206,4 +209,143 @@ p {
 }
 .job_period {
   font-size: var(--font-micro);
+}
+
+/* Skill */
+
+#skill {
+  background-color: var(--color-yellow);
+}
+.skillset {
+  display: flex;
+  background-color: var(--color-light-grey);
+  color: var(--color-light-white);
+  margin: 20px 0;
+}
+.skillset_title {
+  color: var(--color-white);
+}
+.skillset_left {
+  flex-basis: 60%;
+  background-color: var(--color-dark-grey);
+  padding: 20px 40px;
+}
+.skill_bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-grey);
+}
+.skill_value {
+  height: 3%;
+  background-color: var(--color-orange);
+}
+.skill {
+  margin-bottom: 32px;
+}
+.skillset_right {
+  flex-basis: 40%;
+}
+.tools {
+  background-color: var(--color-grey);
+}
+.skill_description {
+  display: flex;
+  justify-content: space-between;
+}
+.tools,
+.etc {
+  padding: 20px;
+}
+
+/* Works */
+.catagory_btn {
+  border: 1px solid var(--color-dark-white);
+  border-radius: var(--size-borer-radius);
+  font-size: var(--font-regular);
+  padding: 8px 48px;
+}
+.work_categories {
+  margin: 40px;
+}
+.catagory_btn.active,
+.catagory_btn:hover {
+  background-color: var(--color-dark-pink);
+  color: var(--color-white);
+}
+.catagory_btn.active .category_count,
+.catagory_btn:hover .category_count {
+  top: 0;
+  opacity: 1;
+}
+
+.category_count {
+  background-color: var(--color-orange);
+  border-radius: 50%;
+  color: var(--color-white);
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  display: inline-block;
+  position: relative;
+  top: -20px;
+  left: 4px;
+  opacity: 0;
+  transition: all var(--animation-duration);
+}
+.work_project {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.project {
+  position: relative;
+  width: 280px;
+  height: 250px;
+  margin: 2px;
+  border-radius: 5%;
+  background-color: var(--color-light-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.project_img {
+  max-width: 90%;
+  max-height: 90%;
+}
+.project:hover .project_description {
+  opacity: 0.6;
+  transform: translateY(0px);
+  /*transform: translate3d(-30px, 30px, 50px);*/
+}
+.project_description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--color-black);
+
+  /*perspective: 1000px;*/
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all var(--animation-duration) ease;
+}
+.project_description h3 {
+  color: var(--color-white);
+}
+.project_description h3:after {
+  content: "";
+  width: 25px;
+  height: 2px;
+  position: relative;
+  left: 50%;
+  margin-left: -12px;
+  margin-top: 8px;
+  background-color: var(--color-dark-white);
+  display: block;
 }
