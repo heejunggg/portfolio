@@ -149,8 +149,9 @@ p {
   padding: 50px;
   text-align: center;
   margin: auto;
+  /*height: 100vh;*/
 }
-.section_description {
+.section_container {
   max-width: 1200px;
   /* 그 안에 있는 글씨만 1200px까지만 적용하겠다.*/
   margin: auto;
