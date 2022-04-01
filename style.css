@@ -65,7 +65,7 @@ h1 {
   font-size: var(--font-large);
   font-weight: var(--weight-bold);
   color: var(--color-black);
-  margin: 10px 0px;
+  /*margin: 10px 0px;*/
 }
 h2 {
   font-size: var(--font-medium);
@@ -97,6 +97,7 @@ p {
   padding: 16px;
   background: transparent;
   transition: all var(--animation-duration) ease-in-out;
+  z-index: 1;
 }
 #navbar.navbar--dark {
   background-color: var(--color-pink);
@@ -164,6 +165,7 @@ p {
 .section {
   /*공통적인것을 모아보자*/
   padding: 50px;
+
   text-align: center;
   margin: auto;
   /*height: 100vh;*/
