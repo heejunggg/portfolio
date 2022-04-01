@@ -49,20 +49,33 @@ document.addEventListener('scroll', () => {
         scrollTo.scrollIntoView({behavior:"smooth"});
     }
 
-    //스크롤 하면 home이 점점 투명해지는것.
-    //1.home을 불러와서 변수지정---2.스크롤되면 점점 fade. 스크롤양?
-    /*home의 화면높이가 800이라면 0--->800일때 처음인 0일때는 투명도가 1이여야하고
-    높이가 중간인 400일때는 투명도가 0.5여야 하고, 800일때는 투명도가 0이여야한다.*/
+    //스크롤 하면 home이 점점 투명해지는것 해보자!
+    //1. home을 불러와서 변수지정---
+    /*2. home의 화면높이가 800이라면 scrollY(화면맨윗)가 0일때는 투명도가 1(다보여지고) 
+    중간인 scrolllY가 400일때는 투명도가 0.5, scrollY가 800일때는 투명도가 0이되게해보자*/
 
     const home = document.querySelector('.home_container');
     const homeheight = home.getBoundingClientRect().height;
     document.addEventListener('scroll', () => {
         //console.log(homeheight); 몇인지 함 보자규 751이네..
-        //console.log(1 - window.scrollY / homeheight);
+        //console.log(1 - window.scrollY / homeheight); 0나누기 homeheight
         home.style.opacity = 1 - window.scrollY / homeheight;
 
     });
 
-    
+    // 
+    // Home의 반정도 왔을때 arrow보이게
+    const arrowUp = document.querySelector('.arrow-up');
+   document.addEventListener('scroll', () => {
+        if(window.scrollY > homeheight / 2 ){
+            arrowUp.classList.add('visible');
+        } else{
+            arrowUp.classList.remove('visible');
+        }
+    });
 
+    // Arrow를 눌렀을때 위로 올라가기
+    arrowUp.addEventListener('click', () => {
+        scrollIntoView('#home');
+    });
     
