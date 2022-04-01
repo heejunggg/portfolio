@@ -1,7 +1,7 @@
-/*$(function(){
+$(function(){
     var $menu = $('.navbar_menu li');
     var $contents = $('section');
-  /*console.log($contents);
+  /*console.log($contents);*/
 
    $menu.click(function(event){
 
@@ -11,4 +11,4 @@
     $('html,body').animate({scrollTop:tt});
    });
 
-});*/
+});
