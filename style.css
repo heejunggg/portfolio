@@ -114,13 +114,12 @@ p {
   padding: 8px 12px;
   margin: 0 4px;
   cursor: pointer;
-  border-radius: var(--size-borer-radius);
-}
-.navbar_menu_item.active {
-  border: 1px solid var(--color-white);
+  border:1px solid transparent;
   border-radius: var(--size-borer-radius);
 }
 .navbar_menu_item:hover {
+  border: 1px solid var(--color-white);
+  border-radius: var(--size-borer-radius);
   background-color: var(--color-dark-pink);
 }
 .navbar_toggle_btn {
@@ -165,7 +164,6 @@ p {
 .section {
   /*공통적인것을 모아보자*/
   padding: 50px;
-
   text-align: center;
   margin: auto;
   /*height: 100vh;*/
@@ -287,12 +285,12 @@ p {
 .work_categories {
   margin: 40px;
 }
-.catagory_btn.active,
+.catagory_btn.selected,
 .catagory_btn:hover {
   background-color: var(--color-dark-pink);
   color: var(--color-white);
 }
-.catagory_btn.active .category_count,
+.catagory_btn.selected .category_count,
 .catagory_btn:hover .category_count {
   top: 0;
   opacity: 1;
@@ -316,6 +314,12 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  opacity: 1;
+  transition: all var(--animation-duration) ease-out;
+}
+.work_project.anim-out {
+  opacity: 0;
+  transform: scale(0.96) translateY(40px);
 }
 .project {
   position: relative;
@@ -327,6 +331,9 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.project.invisible {
+  display: none;
 }
 .project_img {
   max-width: 90%;
