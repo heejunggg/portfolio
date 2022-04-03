@@ -466,6 +466,7 @@ p {
     flex-direction: column;
     align-items: start;
     background-color:var(--color-pink);
+    opacity:.8;
   }
   #navbar.navbar--dark{
     padding:16px;
