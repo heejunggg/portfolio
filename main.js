@@ -15,6 +15,8 @@ document.addEventListener('scroll', () => {
     }
 });
 
+
+
 // Handle scrolling when tapping on the navbar menu
 // navbar menu를 클릭했을때 해당 내용이 나온다.
     const navbarMenu = document.querySelector('.navbar_menu');
@@ -23,10 +25,17 @@ document.addEventListener('scroll', () => {
     const link = target.dataset.link;
     if(link==null){
         return;
+       
     }
-
+    navbarMenu.classList.remove('open');
     scrollIntoView(link); //함수를아래로 했으니까 이제 지정만 해주고..
     });
+
+    // Navbar toggle button for small screen
+    const navbarToggleBtn = document.querySelector('.navbar_toggle_btn');
+    navbarToggleBtn.addEventListener('click', () => {
+    navbarMenu.classList.toggle('open');
+});
     
 
     // 클릭이 되면 우리가 등록한 함수가 호출되게 함.()=>{}
