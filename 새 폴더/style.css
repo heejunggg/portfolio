@@ -553,6 +553,9 @@ p {
     right: 16px;
     font-size: var(--font-medium);
   }
+  .navbar_toggle_btn i{
+    font-size: var(--font-medium);
+  }
   #navbar {
     flex-direction: column;
     align-items: flex-start;
@@ -566,7 +569,7 @@ p {
     flex-direction: column;
     text-align: center;
     width: 100%;
-    display: none;
+    display: none; /*왜 안사라질까.. */
   }
   .navbar_menu.open{
     display: block;
