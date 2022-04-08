@@ -78,6 +78,16 @@ navbarMenu.addEventListener('click', (event) => {
         }
     });
 
+    // About 
+const inMauors = document.querySelector('.about_majors'); //박스
+const maJor = document.querySelector('.major'); //대문
+
+maJor.addEventListener('click', () => {
+  inMauors.classList.add('visible');
+});
+
+
+
     // Arrow를 눌렀을때 위로 올라가기
     arrowUp.addEventListener('click', () => {
         scrollIntoView('#home');
