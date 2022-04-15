@@ -1,0 +1,127 @@
+@media screen and (max-width:800px){
+
+    #wrap{
+        position:static;
+    }
+
+    .video_cover{
+        position:fixed;
+        background-color:#222;
+        opacity:1;
+    }
+
+    .video_cover video{
+        opacity:0.8;
+    }
+
+    .header{
+        position:fixed;
+        left:0;
+        width:100%;
+        height:60px;
+        transform:skewX(0deg);
+        background:none;
+    }
+
+    .header .logo{
+        width:100px;
+        top:50%;
+        right:auto;
+        left:10px;
+        transform:translateY(-50%) skewX(0deg);
+       
+    }
+    .header .logo a img.pc_logo{display:none;}
+    .header .logo a img.m_logo{display:block;}
+
+    .header .gnb{
+        display:none;
+    }
+    .sns{display:none;}
+
+    .txtBox{ 
+        position:fixed;
+        top:30%;
+        left:50%;
+        white-space:nowrap;
+        right:auto;/*white랑 이거 둘중하나 없으면 600넘어가면 에디션이 따로논다.*/
+        transform:translate(-50%,-50%) scale(0.7);
+    }
+    
+    .btn{
+        display:none;
+    }
+    .m_btn{
+        display:block;
+    }
+    
+    .section{
+        width:100%;
+        right:0;
+        bottom:auto;
+        top:100%;
+        height:auto;
+        transform:skewX(0deg);
+    }
+    .section.on{
+        right:0;
+    }
+
+    .section .s_box{
+       position:static;
+       width:100%;
+    }
+
+    .section .s_box .category{
+       position:static; /*이해못함.*/
+       transform:translateX(0);
+       width:100%;
+       padding:150px 0;
+    }
+    .section .s_box .category li{
+        float:left;
+        transform:translateX(0);
+        width:30%;
+        margin-left:2.5%;
+      
+    }
+
+    .section .s_box .category li span{
+        transform:skewX(0deg);
+    }
+    
+    .section .s_box .category li a img{
+        display:block;
+        width:100%;
+        height:auto;
+        transform:skewX(0deg);
+        opacity:1;
+    }
+
+    .section .s_box .category li:nth-child(1) a{
+        display:block;
+        width: 100%;
+        height:100%;
+        overflow:hidden; 
+        /*pp.jpg 로 했을때 물어보자.*이미지를 자르고싶은데..이거햇더니 잘라는 지는데..배열이*/
+           
+    }
+
+    .section .s_box .category li:nth-child(1) a img{
+        display:block;
+        width:100%;
+        height:auto;
+    }
+  
+}
+
+    @media screen and (max-width:600px){
+      
+        .section .s_box .category li{
+            float:none;
+            width:90%;
+            margin:30px auto;
+        }
+
+}
+

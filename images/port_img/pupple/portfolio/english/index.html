@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./images/se_favicon.png">
+    <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <title>segero어학원사이트</title>
+    <script>
+        $(document).ready(function(){
+
+            var repeat;
+            //repeat 변수를 선언
+            var i = 0;
+            //전역변수 i 선언과 동시에 0숫자 저장.
+
+            timer();
+            //timer함수 바로 실행.
+            function timer(){
+                //timer 함수 설정.
+                repeat = setInterval(function(){
+                    //repeat 변수에 setInterval 실행문을 저장.
+                    i++;
+                    if(i==4){
+                        i=0;
+                    }
+                    $(".pager li").removeClass("on").eq(i).addClass("on");
+                    $(".imgs li").stop().fadeOut();
+                    $(".imgs li").eq(i).stop().fadeIn();
+
+                },3000);
+                //3초에 한번씩 실행.
+            }
+
+            $(".pager li").click(function(){
+                clearInterval(repeat);
+                //setInterval 실행을 잠시 중지시켜줌.
+                i = $(this).index();
+
+                $(".imgs li").stop().fadeOut();
+                $(".imgs li").eq(i).stop().fadeIn(function(){timer();});
+                //fadeIn()안에 함수를 작성함으로서 콜백함수를 다시 설정할 수 있다.
+                //fadeIn이 완전히 끝난 직후에 timer함수를 바로 실행한다.
+                $(".pager li").removeClass("on");
+                $(this).addClass("on");
+
+                return false;
+
+            });
+
+            var clone = $(".slide_middle li").clone();
+           
+           
+            $(".slide_middle").append(clone);
+
+            var middle_i = 0;
+            $(".next_btn").click(function(){
+
+                middle_i++;
+
+                $(".slide_middle").stop().animate({
+                    "left":middle_i*-20+"%"
+                },600, function(){
+                    if(middle_i==5){
+                        $(".slide_middle").css("left","0%");
+                        middle_i=0;
+                    }
+                });
+                return false;
+            });
+            $(".prev_btn").click(function(){
+                if(middle_i==0){
+                    $(".slide_middle").css("left","0");
+                    middle_i=5;
+                }
+                middle_i--;
+                $(".slide_middle").stop().animate({
+                    "left":middle_i*-20+"%"
+                },600);
+                return false;
+            });
+
+            $(".totop").click(function(){
+                $("html,body").stop().animate({
+                    "scrollTop":0
+                },1000);
+                return false;
+
+            });
+
+     });
+
+    </script>
+
+
+
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div class="top_header">
+                <div class="center thc">
+                    <div class="top_menu">
+                        <ul class="crum_menu"> <!--난 ul을 div로 했었음..근데나중에 전체ul 잡아주려면..이렇게 해야하네-->
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">sitemap</a></li>
+                            <li><a href="#">english</a></li>
+                            <li>
+                                <form action="#" method="post">
+                                <label for="search">search</label>
+                                <input type="text" id="search" name="search" value="" placeholder="검색어를 입력해주세요">
+                                <input type="image" src="./images/icon_search.png">
+                                </form>
+                            </li>
+                        </ul>
+                        <ul class="sns_menu">
+                            <li><a href="#"><img src="./images/icon_blog.gif" alt="blog"></a></li>
+                            <li><a href="#"><img src="./images/icon_facebook.gif" alt="facebook"></a></li>
+                            <li><a href="#"><img src="./images/icon_twitter.gif" alt="twitter"></a></li>
+                            <li><a href="#"><img src="./images/icon_youtube.gif" alt="youtube"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom_header ">
+                <div class="center bhc">
+                    <h1 class="logo"> <!--이부분을 매일 모른다.-->
+                        <a href="#">
+                            <img src="./images/logo.png" alt=""/>
+                         </a>
+                    </h1>
+                    <nav>
+                       <ul class="gnb cf">
+                            <li><a href="#">세계로국제언어</a>
+                                <ul>
+                                    <li><a href="#">교육비전</a></li>
+                                    <li><a href="#">원장 인사말</a></li>
+                                    <li><a href="#">전 직원 소개</a></li>
+                                    <li><a href="#">교육환경</a></li>
+                                    <li><a href="#">찾아오시는 길</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">영어유치부</a> 
+                                <ul>
+                                    <li><a href="#">정규프로그램</a></li>
+                                    <li><a href="#">방과후 프로그램</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">초등부</a>
+                                <ul>
+                                    <li><a href="#">국내어학연수 소개</a></li>
+                                    <li class="letter"><a href="#">Dreamer 정규반(초1,2)</a></li>
+                                    <li class="letter"><a href="#">Imaginer 정규반(초3-6)</a></li>
+                                    <li><a href="#">- 태권도</a></li>
+                                    <li><a href="#">- 음악</a></li>
+                                    <li><a href="#">- 중국어</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">입학안내</a>
+                                <ul>
+                                    <li><a href="#">자주하는 질문</a></li>
+                                    <li><a href="#">입학절차</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">커뮤니티</a>
+                                <ul>
+                                    <li><a href="#">공지사항</a></li>
+                                    <li><a href="#">이벤트</a></li>
+                                    <li><a href="#">원생 영어 인터뷰</a></li>
+                                    <li><a href="#">갤러리</a></li>
+                                    <li><a href="#">English Class</a></li>
+                                    <li><a href="#">오리엔테이션</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="gnb_ib">
+                                    <a href="#"><img src="./images/hd_qa_ic.png" alt=""/>입학안내</a>
+                                </div>
+                            </li>
+                        </ul> 
+                        
+                     
+                        <div class="full_bg"></div>
+                    </nav>    
+                </div>
+            </div>
+        </header>
+
+        <div class="img_slide">
+            
+            <ul class="imgs">
+                <li class="img1">
+                    <a href="#">
+                        <span class="text">
+                        <span>&nbsp;유치부·초등 전문 정통 영어<br/></span>
+                        <span>결과의 차이가 큰<br/></span>
+                        <span>세계로국제어학원<br/></span>
+                        <span>&nbsp;바른 영어 교육 하나로도 아이의 미래가 달라질
+                            수 있습니다.</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="img2"><a href="#"><span class="text">
+                    <span>&nbsp;성인반 모집 영어 회화<br/></span>
+                    <span>결과의 차이가 큰<br/></span>
+                    <span>세계로국제어학원<br/></span>
+                    <span>&nbsp;바른 영어 교육 하나로도 아이의 미래가 달라질
+                        수 있습니다.</span>
+                </span></a></li>
+                <li class="img3"><a href="#"><span class="text">
+                    <span>&nbsp;어르신도 괜찮아요<br/></span>
+                    <span>결과의 차이가 큰<br/></span>
+                    <span>세계로국제어학원<br/></span>
+                    <span>&nbsp;바른 영어 교육 하나로도 아이의 미래가 달라질
+                        수 있습니다.</span>
+                </span></a></li>
+                <li class="img4"><a href="#"><span class="text">
+                    <span>&nbsp;유치부·초등 전문 정통 영어<br/></span>
+                    <span>결과의 차이가 큰<br/></span>
+                    <span>세계로국제어학원<br/></span>
+                    <span>&nbsp;바른 영어 교육 하나로도 아이의 미래가 달라질
+                        수 있습니다.</span>
+                </span></a></li>
+            </ul>
+            <ul class="pager">
+                <li class="pager1 on"><a href="#"></a></li>
+                <li class="pager2"><a href="#"></a></li>
+                <li class="pager3"><a href="#"></a></li>
+                <li class="pager4"><a href="#"></a></li>
+            </ul>
+            
+            
+        </div>
+
+        <main>
+            <div class="section s_top">
+                <div class="center stc cf ">
+                    <div class="article notice">
+                        <div class="a_title">
+                            <h3>공지사항</h3>
+                            <p>
+                                <a href="#">
+                                    <img src="./images/icon_plus.png" alt=""/>
+                                </a>
+                            </p>
+                        </div>
+                        <div class="list">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="./images/icon_new.gif" alt=""/> 2022년 세계로국제학교 입학설명회 신청받습니다.
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">2021년 세계로국제스쿨 여름방학 캠프(특강) - 프로젝트 기반 STEAM교육
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">2021년 초등 방과후 프로그램/행정 오리엔테이션</a>
+                                </li>
+                                <li>
+                                    <a href="#">2022년 과학기술에 대한 학생의 흥미와 이해를 높이고 과학기술 기반의 융합적 사고력</a>
+                                </li>
+                                <li>
+                                    <a href="#">2022년 세계로국제스쿨 재학생 및 타학교 학생, 초등1~6학년</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                <div class="article new">
+                    <div class="a_title">
+                        <h3>what's New</h3>
+                        <p>
+                            <a href="http://www.naver.com">
+                                <img src="./images/icon_plus.png" alt=""/></a>
+                        </p>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <img src="./images/icon_new.gif" alt=""/>[유아/초등/중등]재학생 예비초등(2012년생)대상 레벨테스트 안내
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">[유아/초등/중등]재학생 예비중등(2009년생)대상 레벨테스트 안내
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">[유아/초등/중등]재학생 예비초등(2015년생)대상 레벨테스트 안내</a>
+                            </li>
+                            <li>
+                                <a href="#">[유아/초등/중등]10/9(토) 한글날 공휴일 정상수업 안내</a>
+                            </li>
+                            <li>
+                                <a href="#">[유아/초등/중등]2021년 추석연휴 휴관안내</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="article guide">
+                    <div class="a_title">
+                        <h3>입학절차안내</h3>
+                        <p>
+                            <a href="#">
+                                <img src="./images/icon_plus.png" alt=""/></a>
+                        </p>
+                    </div>
+                    <div class="list">
+                        <div class="event_img"></div>
+                        <span>입학절차 진행과정을<br/>
+                              알려드립니다.<br/>
+                            <a href="#">자세히보기</a>
+                        </span>
+
+                    </div>
+                    
+
+                </div>
+
+            </div>
+        </div>
+        <div class="section s_slide">
+            <div class="center ssc">
+                <div class="middle_slide">
+                    <ul class="slide_middle cf">
+                        <li><a href="#"><img src="./images/card1.jpg" alt=""/></a></li>
+                        <li><a href="#"><img src="./images/card2.jpg" alt=""/></a></li>
+                        <li><a href="#"><img src="./images/card3.jpg" alt=""/></a></li>
+                        <li><a href="#"><img src="./images/card4.jpg" alt=""/></a></li>
+                        <li><a href="#"><img src="./images/card5.jpg" alt=""/></a></li>
+                       
+                    </ul>
+                </div>
+                <p class="btn prev_btn"><a href="#">&lt;</a></p>
+                <p class="btn next_btn"><a href="#">&gt;</a></p>
+            </div>
+        </div>
+        <div class="section s_tell cf">
+            <div class="center b_stc">
+                <ul class="guest tell_1">
+                    <li>
+                        <span>고객문의 안내<br/></span>
+                        <span>02.3701.2700~1<br/></span>
+                    </li>
+                    <li class="tell_1_1">
+                        <img src="./images/cs.png" alt=""/>
+                        <p class="b_text">
+                            <span>화&nbsp;~금  09:30 ~ 21:30<br/></span>
+                            <span>토요일 09:30 ~ 18:20<br/></span>
+                            <span>일/월요일 휴관<br/></span>
+                        </p>
+                    </li>
+                </ul>
+                <ul class="guest_1 tell_2">
+                    <li>
+                        <a href="#"> 
+                            <img src="./images/nie.png" alt=""/>
+                            조선일보 초등NIE<br/>수강신청 
+                        </a> 
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="./images/online2.png" alt=""/>
+                            ets toefl<br/>practice Online
+                        </a>
+                    </li>
+                </ul>
+                <ul class="guest_2 tell_3">
+                    <li>
+                        <a href="#">
+                            <img src="./images/banners_adult.png" alt=""/>
+                            <span>조선일보 닷컴 교육센터</span><br/>
+                            성인반 홈페이지 바로가기</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="./images/banners_new.png" alt=""/>
+                            <span>신규대기자</span><br/>
+                            유아/초등/중등대기자</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer foot_top">
+            <div class="center ftc">
+                <div class="ft ft_left">
+                    <ul>
+                        <li><a href="#">개인정보 처리방침</a></li>
+                        <li><a href="#">이메일주소집단수집거부</a></li>
+                        <li><a href="#">영상정보처리기기운영방침</a></li>
+                    </ul>
+                </div>
+                <div class="ft ft_right">
+                    <ul> <!--여기놓침 ul입력빠트림-->
+                        <li><a href="#">유관기관 바로가기<span>&and;</span></a>
+                            <ul>
+                                <li><a href="#">어학원연구원</a></li>
+                                <li><a href="#">어학원방송</a></li>
+                                <li><a href="#">미래창조어학원</a></li>
+                                <li><a href="#">어학원정보시스템</a></li>
+                            </ul>
+                        </li>
+                        <li class="totop">
+                            <a href="#">top<span>&and;</span></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer foot_bottom">
+            <div class="center fbc">
+                <p>부산광역시 강서구 송정동 1191-16 / TEL : 051-831-2181 FAX : 051-831-2184 &nbsp;&nbsp;&nbsp;|&nbsp;대표 : 부산광역시 북부교육지원청 등록 제2318호 세계로국제어학원&nbsp;|<br/>
+                       Copyright&copy;(주)세계로국제어학원. All rights reserved.
+                  </p>
+            </div>
+        </div>
+            
+    </footer>
+
+
+        
+    
+    
+</body>
+</html>

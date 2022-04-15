@@ -5,11 +5,30 @@
 
 const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
+const contents = document.querySelectorAll('section');
+const menu = document.querySelectorAll('.navbar_menu_item');
+/*console.log(menu);*/
 document.addEventListener('scroll', () => {
   if (window.scrollY > navbarHeight) {
     navbar.classList.add('navbar--dark');
   } else {
     navbar.classList.remove('navbar--dark');
+  }
+});
+
+// 스크롤이 생기면 메뉴 활성활.
+window.addEventListener('scroll', () => {
+  const sct = this.pageYOffset;
+  console.log(sct);
+
+  for(var i = 0; i < contents.length; i++){
+    if(contents[i].offsetTop - 80 <= sct ){
+      const idx = contents[i].getAttribute('data-num');
+      for(var a = 0; a < menu.length; a++){
+        menu[a].classList.remove('on');
+      }
+      menu[idx].classList.add('on');
+    }
   }
 });
 
@@ -82,13 +101,27 @@ navbarMenu.addEventListener('click', (event) => {
 const inMauors = document.querySelector('.about_majors'); //박스
 const maJor = document.querySelector('.major'); //대문
 
-maJor.addEventListener('click', () => {
-  inMauors.classList.add('visible');
-});
 
+/*maJor.addEventListener('click', () => {
+    inMauors.classList.add('visible');
+    if (maJor.classList.contains('transform')) {
+      maJor.classList.remove('transform');
+    } else {
+      maJor.classList.add('transform');
+      
+    }
+  });*/
 
-
-    // Arrow를 눌렀을때 위로 올라가기
+  maJor.addEventListener('click', () => {
+    if (maJor.classList.contains('transform')) {
+      maJor.classList.remove('transform');
+      inMauors.classList.remove('visible');
+    } else {
+      maJor.classList.add('transform');
+      inMauors.classList.add('visible');
+    }
+  });
+      // Arrow를 눌렀을때 위로 올라가기
     arrowUp.addEventListener('click', () => {
         scrollIntoView('#home');
     });
@@ -125,3 +158,26 @@ maJor.addEventListener('click', () => {
             projectContainer.classList.remove('anim-out');
         },300); 
      });
+
+    // modal
+
+     const img = document.querySelectorAll('.project_img');
+     const lightbox = document.querySelector('#lightbox-overlay');
+     const lightboxImg = lightbox.querySelector('img');
+     
+
+     for(var i = 0; i < img.length; i++){
+      img[i].addEventListener('click', function(){
+          const imgNewSrc = this.getAttribute('data-lightbox');
+          console.log(imgNewSrc);
+  
+      lightboxImg.hasAttribute('src', imgNewSrc);
+      lightbox.classList.add('visible');
+  });
+  
+  lightbox.addEventListener('click', function(){
+      this.classList.remove('visible');
+  });
+  };
+  
+  

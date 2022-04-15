@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="jung"/>
+    <link rel="icon" type="" href="./images/favicon.png">
     <script src="https://kit.fontawesome.com/3d2f6dddc1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="hover-min.css">
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
-    <title>Document</title>
+    <title>jjung's Portfolio</title>
 </head>
 <body>
 
@@ -23,11 +25,11 @@
             <!-- <a href="index.html" class="logo_name"></a>-->
         </div>
         <ul class="navbar_menu">
-            <li class="navbar_menu_item" data-link="#home">Home</li>
-            <li class="navbar_menu_item" data-link="#about">About</li>
-            <li class="navbar_menu_item" data-link="#skill">Skills</li>
-            <li class="navbar_menu_item" data-link="#mywork">Mywork</li>
-            <li class="navbar_menu_item" data-link="#contact">Contact</li>
+            <li class="navbar_menu_item on" data-link="#home" data-num="0">Home</li>
+            <li class="navbar_menu_item" data-link="#about" data-num="1">About</li>
+            <li class="navbar_menu_item" data-link="#skill" data-num="2">Skills</li>
+            <li class="navbar_menu_item" data-link="#mywork" data-num="3">Mywork</li>
+            <li class="navbar_menu_item" data-link="#contact" data-num="4">Contact</li>
         </ul>
 
     <!-- Toggle button -->
@@ -36,7 +38,7 @@
       </button>
     </nav>
     <!-- Home -->
-    <section id="home">
+    <section id="home" data-num="0">
         <div class="home_container">
             <div class="home_avart"></div>
             <div class="home_title">
@@ -50,22 +52,23 @@
         
     </section>
     <!-- About -->
-    <section id="about" class="section">
+    <section id="about" class="section" data-num="1">
         <div class="section_container">
         <h1>About me</h1>
         <div class="about_majors">
-            <div class="in_majors box1" data-too="possible">
-                <div class="major_title">포부</div>
+            <div class="in_majors " data-too="possible">
+                <div class="major_title">| 코딩을 즐기는 웹퍼블리셔 |</div>
                     <div class="major_description">
                         <p>
                             도전하는 걸 좋아하는 성격이며<br/>
-                            편집 디자인일을 하다가 웹쪽으로 전향을 하고자 <br/>
-                            여러 프로세서를 공부중에 있습니다.
+                            편집 디자인일을 하다가<br/>
+                            웹쪽으로 전향을 하고자<br/>
+                            여러 프로세서를 공부중에 입니다.
                         </p>
                     </div>
             </div>
-            <div class="in_majors box2" data-too="licence">
-                <div class="major_title">자격증</div>
+            <div class="in_majors" data-too="licence">
+                <div class="major_title">| 자격증 |</div>
                     <div class="major_description">
                         <p>
                             웹디자인 기능사1급<br/>
@@ -74,234 +77,171 @@
                         </p>
                     </div>
             </div>
-            <div class="in_majors box3" data-too="career">
-                <div class="major_title">경력사항</div>
+            <div class="in_majors" data-too="career">
+                <div class="major_title">| 경력사항 |</div>
                     <div class="major_description">
                         <ul class="career_list">
                             <li class="career_list_item">2002.brander 광고디자인</li>
-                            <li class="career_list_item">2002. 광고디자인</li>
-                            <li class="career_list_item">2002.광고디자인</li>
-                            <li class="career_list_item">2002.광고디자인</li>
+                            <li class="career_list_item">2002.hoongraphics 광고디자인</li>
+                            <li class="career_list_item">2002.데이아트 광고디자인</li>
+                            <li class="career_list_item">2002.평화교역 옷도안담당</li>
                         </ul>
                     </div>
             </div>
         </div>
-        <div class="major"> <!--대문-->
+        <div class="major transform"> <!--대문-->
                 <h2 > moon click >> </h2>
         </div>
         
     </div>
     </section>
     <!-- skill -->
-    <section id="skill" class="section">
+    <section id="skill" class="section" data-num="2">
         <div class="section_container">
             <h1>Skills</h1>
-            <h2>Skills & Attributes</h2>
-            <p>
-                experience with all phases of the software life-cycle. Passion for learning new technologies.
-                Capable of working within a team environment and independently.Ability to plan and time schedule,
-                work under strict time pressure and adapt quickly when needed.
-            </p>
-            <div class="skillset">
-                <div class="skillset_left">
-                    <h3 class="skillset_title">Skills</h3>
-                    <div class="skill">
-                        <div class="skill_description">
-                            <span>HTML</span>
-                            <span>99%</span>
+                <div class="skillset">
+                    <div class="skillset_left">
+                        <h3 class="skillset_title">Skills</h3>
+                        <div class="skill">
+                            <div class="skill_description">
+                                <span>HTML</span>
+                                <span>99%</span>
+                            </div>
+                            <div class="skill_bar">
+                                <div class="skill_value" style="width:80%"></div>
+                            </div>
                         </div>
-                        <div class="skill_bar">
-                            <div class="skill_value" style="width:80%"></div>
+                        <div class="skill">
+                            <div class="skill_description" >
+                                <span>CSS</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill_bar">
+                                <div class="skill_value" style="width:70%"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill_description" >
-                            <span>CSS</span>
-                            <span>80%</span>
+                        <div class="skill">
+                            <div class="skill_description">
+                                <span>JavaScript</span>
+                                <span>60%</span>
+                            </div>
+                            <div class="skill_bar">
+                                <div class="skill_value" style="width:50%"></div>
+                            </div>
                         </div>
-                        <div class="skill_bar">
-                            <div class="skill_value" style="width:70%"></div>
+                        <div class="skill">
+                            <div class="skill_description">
+                                <span>photoshop</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill_bar">
+                                <div class="skill_value" style="width:80%"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill_description">
-                            <span>JavaScript</span>
-                            <span>60%</span>
+                        <div class="skill">
+                            <div class="skill_description">
+                                <span>illustrator</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill_bar">
+                                <div class="skill_value" style="width:80%"></div>
+                            </div>
                         </div>
-                        <div class="skill_bar">
-                            <div class="skill_value" style="width:50%"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill_description">
-                            <span>photoshop</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="skill_bar">
-                            <div class="skill_value" style="width:80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill_description">
-                            <span>illustrator</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="skill_bar">
-                            <div class="skill_value" style="width:80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill_description">
-                            <span>coreldrew</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="skill_bar">
-                            <div class="skill_value" style="width:80%"></div>
+                        <div class="skill">
+                            <div class="skill_description">
+                                <span>coreldrew</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill_bar">
+                                <div class="skill_value" style="width:80%"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="skillset_right">
-                    <div class="tools">
-                        <h3 class="skillset_title">Tools</h3>
-                        <ul class="tools_list">
-                            <li><span>visual code</span></li>
-                            <li><span>Sublime Text with Plug-ings</span></li>
-                            <li><span>Team foundation</span></li>
-                            <li><span>adove Programs</span></li>
-                            <li><span>Sketch app</span></li>
-                        </ul>
-
-                    </div>
-                    <div class="etc">
-                        <h3 class="skillset_title">Etc</h3>
-                        <ul class="etc_list">
-                            <li><span>Git</span></li>
-                            <li><span>Scrum master</span></li>
-                            <li><span>Math</span></li>
-                        </ul>
-                        
-                    </div>
-                </div>
             </div>
         </div>
         
     </section>
     <!-- mywork -->
-    <section id="mywork" class="section">
+    <section id="mywork" class="section" data-num="3">
         <div class="section_container">
         <h1>My work</h1>
         <h3>projects</h3>
         <div class="work_categories">
-            <button class="catagory_btn selected" data-filter="*">All<span class="category_count">8</span></button>
+            <button class="catagory_btn selected" data-filter="*" >All<span class="category_count">8</span></button>
             <button class="catagory_btn" data-filter="webpage">webpage<span class="category_count">3</span></button>
             <button class="catagory_btn" data-filter="coding-charactor">coding-charactor<span class="category_count">3</span></button>
             <button class="catagory_btn" data-filter="Design editor">Design editor<span class="category_count">2</span></button>
         </div>
         
         <div class="work_project">
-            <a href="./images/port_img/english/index.html" class="project" data-type="webpage">
-                <img src="./images/jobs/port_web1.jpg" class="project_img" alt="국제어학원">
+            <a href="./images/port_img/pupple/index.html" class="project" data-type="portfolio">
+                <img src="./images/port_img/pupple/form_pu.png" class="project_img" alt="portfolio">
                 <div class="project_description"><!--마우스올렸을때-->
-                    <h3>webpage</h3>
+                    <h3>portfolio / 기간_2주일</h3>
                     <span>html,css,javascript</span>
                 </div>
             </a>
-            <a href="./images/port_img/kimchi_end/index.html" class="project" data-type="webpage">
-                <img src="./images/jobs/port_web3.jpg" class="project_img" alt="김치">
+            <a href="./images/port_img/english/index.html" class="project" data-type="webpage">
+                <img src="./images/port_img/english/form_en.png" class="project_img" alt="국제어학원">
                 <div class="project_description"><!--마우스올렸을때-->
-                    <h3>webpage</h3>
+                    <h3> 기간:4일 /  참여도 100%</h3>
                     <span>html,css,javascript</span>
                 </div>
             </a>
             <a href="./images/port_img/kam-char/index.html" class="project" data-type="coding-charactor">
-                <img src="./images/jobs/port_web4.jpg" class="project_img" alt="감잡았어">
+                <img src="./images/port_img/kam-char/form_gam.png" class="project_img" alt="감잡았어">
                 <div class="project_description"><!--마우스올렸을때-->
-                    <h3>coding-charactor</h3>
+                    <h3>기간:2일 / 참여도100% </h3>
                     <span>html,css</span>
                 </div>
             </a>
-            <a href="./images/port_img/" class="project" data-type="Design editor">
-                <img src="./images/jobs/port_d7_1.jpg" class="project_img" alt="국제항쟁">
+            <a href="images/port_img/minju/minju_modal.jpg" class="project"  data-type="Design editor">
+                <img src="./images/port_img/minju/minju.png" data-lightbox="images/port_img/minju/minju_modal.jpg"
+                class="project_img" alt="국제항쟁">
                 <div class="project_description"><!--마우스올렸을때-->
-                    <h3>리플렛</h3>
+                    <h3>클라이어트 상담부터~<br/>인쇄물 넘기기까지 기간:3일 </h3>
                     <span>coreldrew,photoshop</span>
                 </div>
             </a>
-            <a href="./images/port_img/korea/korea_cover.jpg" class="project" data-type="Design editor">
-                <img src="./images/jobs/port_d1.jpg" class="project_img" alt="영재">
+            <a href="images/port_img/korea/korea_modal.jpg" class="project" data-type="Design editor">
+               <img src="images/port_img/korea/form_kor.jpg" data-lightbox="images/port_img/korea/korea_modal.jpg"
+               class="project_img" alt="영재"/>
                 <div class="project_description"><!--마우스올렸을때-->
-                    <h3>카다로그</h3>
+                    <h3>클라이언트와의 상담부터~<br/>인쇄물 넘기기까지 기간:1주일 </h3>
                     <span>coreldrew,photoshop</span>
                 </div>
             </a>
-            <a href="./images/port_img/korea/korea_1.jpg" class="project" data-type="Design editor">
-                <img src="./images/jobs/port_d3.jpg" class="project_img" alt="영재">
+            <a href="images/port_img/pizza/pizza_modal.jpg" class="project" data-type="Design editor">
+                <img src="./images/port_img/pizza/pizza_form.png" data-lightbox="images/port_img/pizza/pizza_modal.jpg" 
+                class="project_img" alt="파스타">
                 <div class="project_description"><!--마우스올렸을때-->
-                    <h3>카다로그</h3>
+                    <h3>클라이언트와의 상담부터~<br/>인쇄물 넘기기까지 기간:3일 </h3>
                     <span>coreldrew,photoshop</span>
                 </div>
             </a>
-            <a href="./images/port_img/pizza/pasta_cover.jpg" class="project" data-type="Design editor">
-                <img src="./images/jobs/port_d4.jpg" class="project_img" alt="파스타1">
+            <a href="images/port_img/soso/soso_large.jpg" class="project" data-type="Design editor">
+                <img src="images/port_img/soso/soso_small.jpg" data-lightbox="images/port_img/soso/soso_large.jpg"  class="project_img" alt="소스와꼬꼬">
                 <div class="project_description"><!--마우스올렸을때-->
-                    <h3>리플렛</h3>
+                    <h3>클라이언트와의 상담부터~<br/>인쇄물 넘기기까지 기간:3일</h3>
                     <span>coreldrew,photoshop</span>
                 </div>
-                <a href="./images/port_img/pizza/pasta_inner.jpg" class="project" data-type="Design editor">
-                    <img src="./images/jobs/port_d5.jpg" class="project_img" alt="파스타2">
-                    <div class="project_description"><!--마우스올렸을때-->
-                        <h3>리플렛</h3>
-                        <span>coreldrew,photoshop</span>
-                    </div>
             </a>
-        </div>
+            </div>
     </div>
     </section>
-    <!-- textimonial -->
-    <section id="testimonial" class="section">
-        <div class="section_container">
-        <h1>Testimonials</h1>
-        <h3>See what they say about me</h3>
-        <div class="testimonials">
-            <div class="testimonial">
-                <img src="./images/testimonials/testimonials.png" class="testimonial_avatar"alt="" />
-                <div class="testimonial_speech-bubble ">
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry. Lorem Ipsum has been the industry's standard dummy text
-                        ever since the 1500s, when an unknown printer took a galley of type
-                        and scrambled it to make
-                    </p>
-                    <p class="name"><a href="">heejung</a>/family</p>
-                </div>
-            </div>
-        </div>
-        <div class="testimonials section">
-            <div class="testimonial ">
-                <div class="testimonial_speech-bubble">
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry. Lorem Ipsum has been the industry's standard dummy text
-                        ever since the 1500s, when an unknown printer took a galley of type
-                        and scrambled it to make
-                    </p>
-                    <p class="name"><a href="">heejung</a>/family</p>
-                </div>
-                <img src="./images/testimonials/testimonials.png" class="testimonial_avatar"alt="" />
-            </div>
-        </div>
-        </div>
-    </section>
+        
+    <!-- modal -->
+    <div id="lightbox-overlay">
+        <img src="" alt="Lightbox image" title="Click anywhere to close"  />
+    </div> <!-- end lightbox-overlay -->
+        
     <!-- contact -->
-    <section id="contact" class="section">
-        <h1 class="contact_title">Let's talk</h1>
+    <section id="contact" class="section" data-num="4">
+        <h1 class="contact_title">contact</h1>
         <h2 class="contact_email">ssin53tae@gmail.com</h2>
         <div class="contact_links">
             <a href="https://github.com/heejunggg" target="_blank">
                 <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="#" target="_blank">
-                <i class="fa-brands fa-android"></i>
             </a>
         </div>
             <p class="contact_rights">2022 webpublisher_Heejung - All rights reserved</p>
@@ -311,5 +251,7 @@
     <button class="arrow-up">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
+
+
 </body>
 </html>

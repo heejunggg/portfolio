@@ -27,6 +27,7 @@
   --color-logo:#3e033a;
   --color-light-grey: #7c7979;
   --color-dark-white: #bdbdbd;
+  --color-moon:#f2e8dc;
   
   /* Font size */
   --font-large: 48px;
@@ -41,6 +42,7 @@
   --weight-semi-bold: 600;
   --weight-medium: 500;
   --weight-regular: 400;
+  --weight-light:250;
 
   /* Font*/
   --font-family: 'Noto Sans KR', sans-serif;
@@ -89,14 +91,12 @@ h1 {
   font-weight: var(--weight-medium);
   font-family:'Ubuntu', sans-serif;
   color: var(--color-22222);
-
-  /*margin: 10px 0px;*/
 }
 h2 {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
   color: var(--color-black);
-  margin: 8px 0;
+ /* margin: 8px 0;*/
   
 }
 h3 {
@@ -109,7 +109,7 @@ p {
   font-family: 'Noto Sans KR', sans-serif;
   font-size: var(--font-regular);
   font-weight: var(--weight-regular);
-  color: var(--color-black);
+  color:var(--color-22222);
   margin: 4px 0;
 }
 
@@ -158,17 +158,24 @@ p {
 .navbar_menu {
   display: flex;
   margin: 0;
+  margin-right:70px;
 }
 
 .navbar_menu_item {
   padding: 8px 12px;
   margin: 0 4px;
   cursor: pointer;
-  font-size:var(--font-regu-bold);
+  font-size:var(--font-regular);
   border:1px solid transparent;
   border-radius: var(--size-borer-radius);
 }
 .navbar_menu_item:hover {
+  border: 1px solid var(--color-white);
+  border-radius: 50% var(--size-borer-radius);
+  background-color: var(--color-su);
+}
+.navbar_menu_item.on{
+  color:#b34d08;
   border: 1px solid var(--color-white);
   border-radius: 50% var(--size-borer-radius);
   background-color: var(--color-su);
@@ -249,6 +256,7 @@ p {
   /*공통적인것을 모아보자 / 바탕만늘어남 */ 
   padding: 50px;
   text-align: center;
+  margin:auto;
   background-color:#ebccb7;
    /*height: 100vh;*/
 }
@@ -261,79 +269,91 @@ p {
 /* About */
 /* click대문 */
 .major {
-  width:80%;
+  width:100%;
   height:500px;
-  margin:auto;
   line-height:500px;
-  background-color:var(--color-dark-white);
+  border-radius:20px;
+  background-color: var(--color-moon);
   transform-origin:bottom;
   transform: rotateX(0deg);
   transition:all .7s ease-in;
 }  
-.major:hover{ /*대문 hover시*/
- transform: perspective(200px) rotateX(50deg) ;
+.transform {
+  transform: perspective(200px) rotateX(50deg) ;
+ }
+#about{
+  position:relative;
 }
-
 /* 포부,자격증, 경력사항 */
-.about_majors{ 
+/*.about_majors{ 
   display:flex;
+  flex-direction: row;
   justify-content:space-between;
   position:absolute;
   display:none;
 }
 .about_majors.visible{
-  display:block;
-  animation:boxs 3s 1s 1 ease-in;
+  display:flex;
+  margin-top:30px;
+  animation:boxs 6s 5s 1 ease-in;
+}*/
+
+.about_majors { 
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  opacity:0;
 }
+.about_majors.visible{
+  display: flex;
+  width:100%;
+  justify-content: center;
+  align-items: center;
+  animation:boxs 3s ease-in-out;
+  opacity:1;
+}
+
 @keyframes boxs{
   0% {opacity:0;
-      transform: translate3d(-100%, 0, 0);}
+      margin-top:0;}
+  50%{margin-top:-5%;}
+  75%{margin-top:10%;}
+  95%{margin-top:-10%;}
  100%{opacity:1;
-      transform: translateZ(0)}
+  margin-top:0;}
 }
-
-
 .major_title{
   font-size:20px;
-  font-weight: var(--font-medium);
+  color: #b34d08;
+  font-weight: var(--weight-light);
+  
 }
 .in_majors{
- width:350px;
+  width:300px;
   height:250px;
   border-radius:10px;
   padding:20px;
-  background-color:var(--color-light-white);
+  margin:0 20px;
+  background-color:var(--color-moon);
+  border:1px solid var(--color-navba);
+  box-shadow:10px 10px 15px rgb(159 148 148 / 28%);
+  color:var(--color-logo);
+  font-weight: var(--weight-semi-bold);
 }
-
-
 .major_description{
   margin:20px 0;
   transform:translateY(20px);
   line-height:25px;
-}
-.in_majors:nth-child(odd){
-  margin-right:40px;
-}
-.in_majors:nth-child(even){
-  margin-right:40px;
 }
 .career_list_item{
   font-family: 'Noto Sans KR', sans-serif;
   margin: 4px 0;
   font-size:var(--font-regular);
   font-weight: var(--weight-regular);
+  color:var(--color-22222);
+  text-align:left;
 }
-.box{
-
-}
-
-
-
-
-
-
-
-
 
 
 /* Skill */
@@ -342,7 +362,6 @@ p {
   background-color: var(--color-basic);
 }
 .skillset {
-  display: flex;
   background-color: var(--color-light-grey);
   color: var(--color-light-white);
   margin: 20px 0;
@@ -351,25 +370,26 @@ p {
   color: var(--color-white);
 }
 .skillset_left {
-  flex-basis: 60%;
   background-color: var(--color-dark-grey);
-  padding: 20px 40px;
+  padding: 20px 60px;
 }
 .skill_bar {
   width: 100%;
-  height: 3px;
+  height: 10px;
   background-color: var(--color-grey);
+  border-radius: 10px;
+  overflow-y:hidden;
 }
 .skill_value {
-  height: 3%;
+  height: 40%;
+  border-radius: 10px;
+  transform: translateY(70%);
   background-color: var(--color-orange);
 }
 .skill {
   margin-bottom: 32px;
 }
-.skillset_right {
-  flex-basis: 40%;
-}
+
 .tools {
   background-color: var(--color-grey);
 }
@@ -438,13 +458,15 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow:hidden;
+  
 }
 .project.invisible {
   display: none;
 }
-.project_img {
-  max-width: 90%;
-  max-height: 90%;
+.project img {
+  max-width: 120%;
+  max-height: 100%;
 }
 .project:hover .project_description {
   opacity: 0.6;
@@ -462,8 +484,6 @@ p {
   flex-direction: column;
   justify-content: center;
   background-color: var(--color-black);
-
-  /*perspective: 1000px;*/
 
   opacity: 0;
   transform: translateY(10px);
@@ -483,53 +503,48 @@ p {
   background-color: var(--color-dark-white);
   display: block;
 }
+#lightbox-overlay { 
+    opacity: 0;
+    pointer-events: none;
+    position: fixed; 
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(29, 31, 33, .95);
+    transition: opacity .3s ease-in; 
+}
 
-/* testimonial */
-#testimonial {
-  background-color: var(--color-basic);
+#lightbox-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
-.testimonials {
-  margin: 32px;
+
+#lightbox-image {
+  max-height:90%;
+  max-width:90%;
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  background: transparent url("images/loading.gif") 50% 50% no-repeat;
+  text-indent: -99999px;
 }
-.testimonial {
-  display: flex;
-  align-items: center;
-}
-.testimonial_avatar {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-}
-.testimonial_avatar:nth-child(odd) {
-  margin-right: 40px;
-}
-.testimonial_avatar:nth-child(even) {
-  margin-left: 40px;
-}
-.testimonial_speech-bubble {
-  padding: 18px;
-  background-color: var(--color-white);
-  border-radius: var(--size-borer-radius);
-}
-.testimonial_speech-bubble p {
-  color: var(--color-dark-grey);
-  margin-bottom: 20px;
-}
-.testimonial_speech-bubble a {
-  color: var(--color-pink);
-}
+
 
 /* Contact */
 #contact {
-  background-color: var(--color-m_basic);
+  background-color: var(--color-basic);
 }
-.contact_title,
-.contact_email,
-.contact_rights {
-  color: var(--color-white);
+.contact_email{
+  color: var(--color-m_basic);
+}
+.contact_rights{
+  font-size:var(--font-small);
+  color:#7c7979;
 }
 .contact_title {
-  margin: 32px 0;
+  /*margin: 32px 0;*/
 }
 .contact_links {
   font-size: var(--font-large);
@@ -537,10 +552,11 @@ p {
 }
 .contact_links i {
   transition: all var(--animation-duration) ease;
+  color:#e1cba3;
 }
 .contact_links i:hover {
   transform: scale(1.2);
-  color: var(--color-yellow);
+  color: #7c7979;
 }
 
 /* Scroll */
@@ -599,15 +615,36 @@ p {
   }
   .section {
     padding: 16px;
-    padding-top: 40px;
+    padding-top: 95px;
   }
-  .about_majors {
+  #about{
+    height:120vh;
+    overflow: hidden;
+  }
+  .about_majors { 
+    position: absolute;
+    left:50%;
+    top:50%;
+    font-size:var(--font-small);
+  } 
+  .about_majors.visible{
     flex-direction: column;
-    margin: 40px 0;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    align-items: center;
+    transform:translate(-50%,-42%);
+  }
+  .in_majors{
+    padding: 23px;
+    font-size: var(--font-micro);
+    height: auto;
+    margin: 20px 0;
   }
   .major {
-    margin-bottom: 38px;
+    position: absolute;
+    bottom: -46px;
+  }
+  .major_description{
+    transform:translateY(0);
   }
   .skillset {
     flex-direction: column;

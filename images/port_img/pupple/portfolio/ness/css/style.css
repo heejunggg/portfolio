@@ -1,0 +1,432 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;800&family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,200;1,600&family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Play&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,200;1,600&family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR&family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Josefin+Sans:ital,wght@0,400;1,200;1,600&family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Josefin+Sans:ital,wght@0,400;1,200;1,600&family=Mrs+Sheppards&family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR&display=swap');
+
+/*
+font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Monoton', cursive;
+font-family: 'Play', sans-serif;
+font-family: 'Rock Salt', cursive;
+/*font-family: 'Comforter Brush', cursive;*/
+
+
+*{margin:0; padding:0;}
+ul,li{list-style:none;}
+a{text-decoration:none; color:#000;}
+.cf:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+body{overflow-x:hidden;}
+
+
+#wrap{
+    position:fixed;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    background-color:#222;
+}
+
+.video_cover{  
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    opacity:0.7;
+    overflow:hidden;
+}
+.video_cover video{
+    display:block;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    min-width:100%;
+    height:auto;
+    min-height:100%;
+    width:auto;
+}
+.header{
+    position:absolute;
+    width:700px;
+    height:100%;
+   
+   
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1f0e06+0,563029+100&0.5+0,0.86+100 */
+background: -moz-linear-gradient(45deg,  rgba(31, 14, 6, 0.452) 0%, rgba(86, 48, 41, 0.561) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg,  rgba(31, 14, 6, 0.397) 0%,rgba(86, 48, 41, 0.644) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg,  rgba(31, 14, 6, 0.397) 0%,rgba(86, 48, 41, 0.787) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#801f0e06', endColorstr='#db563029',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    transform:skewX(-40deg);
+    left:-400px; 
+    top:0;
+}
+.header .logo{
+    width:300px;
+    position:absolute;
+    top: 15%;
+    right:30%;
+    transform:skewX(40deg) translate(50%, -50%);/*중앙으로 가게맞춰준다.*/
+}
+.header .logo a{
+    display:block;
+    width:100%;
+    height:auto;
+}
+.header .logo a img{
+    display:block;
+    width:100%;
+    height:auto;
+}
+.header .logo a img.m_logo{
+    display:none;
+}
+.header .gnb{
+    position:absolute;/*이게 왜있는지.*/
+    right:0;
+    top:50%;
+    transform:translateY(-50%);
+
+    font-family: 'Nanum Gothic', sans-serif;
+    
+}
+.header .gnb > li{
+    position:relative;
+}
+.header .gnb > li > a{
+    display:block;
+    width:200px;
+    line-height:50px;
+    font-weight:bold;
+    font-size:18px;
+    text-align:right;
+    padding-right:40px;
+    color:#f5e2c7;
+}
+.header .gnb em{
+    transform:skewX(40deg);
+    display:block;
+}
+.header .gnb > li > ul{
+    position:absolute;
+    left:100%;
+    top:0;
+    display:none;
+}
+.header .gnb > li > ul a{
+    display:block;
+    width:150px;
+    line-height:40px;
+    background-color:#8f7247;
+    color:#fff;
+    text-align:center;
+    font-size:15px;
+    opacity:0.7;
+    border-bottom:1px solid #693f09;
+    margin-bottom:3px;
+}
+
+.header .gnb > li:hover a{
+    background-color:/*#a47449;*/#8f7247;
+    color:#fff;
+}
+.header .gnb >li > ul a:hover{
+    background-color:#563029;
+    color:bisque;
+    
+}
+.sns{
+    position:absolute;
+    top:100px;
+    right:50px;
+}
+.sns li{
+    float:left;
+    margin:0 15px;
+    font-size:25px;/*아이콘사이즈는 폰트사이즈이다.*/
+}
+.sns li a{
+    display:block;
+    color:#c0893d;
+}
+.sns li a:hover{
+    opacity:1;
+    transform:scale(1.2);
+}
+.txtBox{
+    position:absolute;
+    top:50%;
+    right:-3%;
+    transform:translate(-50%,-50%);
+    
+}
+.txtBox .txt{
+ /*공통된게 없네.*/    
+}
+.txtBox .txt.w1{
+   
+    
+    font-family: 'Mrs Sheppards', cursive;
+    
+    line-height:100px;
+    font-size:120px;
+    
+}
+.txtBox .txt.w1 a{
+    display:block;
+    color:#7a49086c;
+}
+.txtBox .txt.w2 a{
+   
+    display:block;
+    width:100%;
+    height:100%;
+    color:#925a11;
+}
+.txtBox .txt.w2 a strong{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:24px;
+    display:inline-block;
+    vertical-align:middle;
+}
+
+.txtBox .txt.w2 a em{
+   display:inline-block;
+    width:180px;
+    height:30px;
+    margin-left:5px;
+    border-radius:10px;
+    background-color:#693f09;
+    text-align:center;
+    line-height:28px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color:#fff;
+    vertical-align:middle;
+}
+
+.section{
+    width:600px;
+    height:100%;
+    
+    position:absolute;
+    bottom:0;
+    right:-600px; /*누르기전에는 빠져있다가*/
+    
+    transform:skewX(-40deg);
+    background-color:#111;
+    opacity:0.7;
+    transition:all 0.6s;
+}
+.section.on{
+    right:-300px; /*on누름과 동시에 오른쪽에서 왼쪽으로 
+    나온다. on 까지 다 지정을 해주고 반응형을 간다.*/
+}
+.section .s_box{
+    width:300px;
+    height:100%; /*꽉채워주고.*/
+    background-color:#000;
+    /*border:1px solid #f5e2c7;*/
+    
+    position:absolute;
+    bottom:0;
+    left:150px;
+    transition:all 1s;
+}
+.section.on .s_box{
+    left:100px; /*section on이 되면서 0.6s동안오른쪽에서 나오고
+    1초동안 s_box가 section 기준으로 왼쪽으로 100px나온다.*/
+}
+.section .s_box .category{
+    width:90%;
+
+    position:absolute;
+    bottom:50px;
+    left:50%;
+    /*background-color:blueviolet;*/
+    transform:translateX(-50%);/*left:50%와 같이 쓰면 수평중앙.*/
+}
+.section .s_box .category li{
+    margin-top:10px;
+    transform:translateX(200px);/*현재위치에서 오른쪽으로 빠지다가*/
+}
+.section .s_box .category li:nth-child(1){transition:all 0.4s;}
+.section .s_box .category li:nth-child(2){transition:all 0.8s;}
+.section .s_box .category li:nth-child(3){transition:all 1.2s;}
+
+.section.on .s_box .category li{
+    transform:translateX(0px); /*on클래스들어올때는 원래위치*/
+}
+.section .s_box .category li span{
+    display:block;
+    color:#8f7247;
+    transform:skewX(40deg);
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-bottom:5px;
+    
+}
+.section .s_box .category li a{
+    display:block;
+    width: 100%;
+    height:auto;
+     
+}
+.section .s_box .category li a img{
+    display:block;
+    width:80%;
+    height:auto;
+    transform:skewX(40deg);
+}
+.section .s_box .category li a img{
+    opacity:0.3;
+    transition:all 0.6s;
+}
+.section .s_box .category li a:hover img{
+    opacity:1;
+}
+.btn{
+    position:absolute;
+    width:150px;
+    height:60px;
+    bottom:40px;
+    right:100px;
+    color:#8f7247;
+    font-size:60px;
+    cursor:pointer;
+}
+.btn.on{
+    right:0;
+    transform:rotate(180deg);
+}
+.btn i{
+    position:absolute; /*소스보기하면 왜before가 생기지..*/
+    right:0; /*<<<>>> 이 표시 합쳐져서 대기중*/
+    top:0;
+    animation:btn_rolling 1.5s infinite linear;
+    /*linear 갑자기 빠르고느리고가 아니라 일정하게 유지*/
+}
+.btn i:nth-child(1){animation-delay:0s;}
+.btn i:nth-child(2){animation-delay:0.5s;}
+.btn i:nth-child(3){animation-delay:1s;}
+
+@keyframes btn_rolling{
+   0%{right:0; opacity:1; transform:scale(1);}
+   100%{right:100%; opacity:0; transform:scale(1.5);}
+}
+
+/*모바일용*/
+
+.m_btn{
+    position:fixed;
+    width:40px;
+    height:40px;
+    right:10px;
+    top:10px;
+    background-color:rgba(0,0,0,0.4);
+    cursor:pointer;
+    z-index:10;
+    display:none;
+}
+.m_btn .bar_cover{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+.m_btn .bar_cover .bar{ 
+    width:25px;
+    height:5px;
+    background-color:darkgoldenrod;
+    margin:3px 0;
+    
+    position:relative;
+	top:0;
+	transition:top 0.3s 0.5s ease-out, transform 0.3s 0s ease-out, opacity 0.3s 0.5s;
+}
+.m_btn.on .bar_cover .bar{
+	transition:top 0.3s 0s ease-out, transform 0.3s 0.5s ease-out, opacity 0.3s 0s;
+}
+
+.m_btn .bar_cover .bar1, /*네모변형*/
+.m_btn .bar_cover .bar3{
+    transform:skewX(40deg);
+}
+.m_btn .bar_cover .bar2{
+    transform:skewX(-40deg)
+}
+
+/*x자.. 내려와서 X해야겠지..*/
+.m_btn.on .bar_cover .bar1{ /*on을 누르면 이렇게 변한다.*/
+    top:8px;
+    transform:skewX(0deg) rotate(-45deg);
+}
+.m_btn.on .bar_cover .bar2{
+    opacity:0;
+}
+.m_btn.on .bar_cover .bar3{
+    top:-8px;
+    transform:skewX(0deg) rotate(40deg);
+}
+
+.m_menu{
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+
+    background: #1f0e0b; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #1f0e0b 0%, #563029 99%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg,  #1f0e0b 0%,#563029 99%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg,  #1f0e0b 0%,#563029 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1f0e0b', endColorstr='#563029',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+.m_menu .m_gnb{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%); 
+    width:300px;
+}
+.m_menu .m_gnb a{
+    display:block;
+    width:100%;
+    background-color:#8f7247;
+    color:#f5e2c7;
+    transform:skewX(-40deg);
+    padding:10px 15px;
+    box-sizing:border-box;
+    border-bottom:2px solid #693f09;
+
+}
+.m_menu .m_gnb a em,
+.m_menu .m_gnb a i{
+	display:inline-block;
+	transform:skewX(40deg);
+}
+.m_menu .m_gnb > li > ul{
+    margin-left:35px;
+    width:100%;
+    padding:10px 15px; /*margin과 padding의차이*/
+    display:none;
+
+}
+.m_menu .m_gnb > li > ul.m_sns li a:after{
+    content:attr(title);
+    display:inline-block;
+    transform:skewX(40deg);
+    font-style:italic;
+}
