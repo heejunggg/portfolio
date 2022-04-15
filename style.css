@@ -180,6 +180,7 @@ p {
   border-radius: 50% var(--size-borer-radius);
   background-color: var(--color-su);
 }
+
 .navbar_toggle_btn {
   position: absolute;
   top: 32px;
@@ -192,11 +193,10 @@ p {
 
 /* Home */
 #home {
- /* background: url(./images/main_bg.png) center/cover no-repeat;*/
-  /*text-align: center;*/
   padding: 40px;
   padding-top: 120px;
   background-color:var(--color-basic);
+  background:url(images/home-background.jpg) center / cover no-repeat;
 }
 .home_container{
   display:flex;
@@ -209,8 +209,10 @@ p {
   width: 200px;
   height: 200px;
   background-color:var(--color-su);
-  margin:left;
-  border-radius:10%;
+  border: 5px solid var(--color-su);
+  border-radius:50%;
+  overflow: hidden;
+
 }
 .home_title{
   color: var(--color-22222);
@@ -512,7 +514,9 @@ p {
     top: 0;
     left: 0;
     background-color: rgba(29, 31, 33, .95);
-    transition: opacity .3s ease-in; 
+    transition: opacity .3s ease-in;
+    
+    /*overflow-y: auto;*/
 }
 
 #lightbox-overlay.visible {
@@ -520,15 +524,32 @@ p {
   pointer-events: auto;
 }
 
-#lightbox-image {
-  max-height:90%;
-  max-width:90%;
+#lightbox-overlay .modal_cover{
   position:absolute;
   left:50%;
   top:50%;
-  transform:translate(-50%,-50%);
-  background: transparent url("images/loading.gif") 50% 50% no-repeat;
-  text-indent: -99999px;
+  width:80%;
+  height:90%;
+  transform:translate(-50%,-45%);
+  background-color: var(--color-light-white);
+  border-radius:10px;
+  text-align:center;
+
+  overflow-y: auto;
+}
+#lightbox-overlay .modal_cover img{
+  width:80%;
+  height:auto;
+}
+#lightbox-overlay button{
+  display:block;
+  width:100px;
+  height:50px;
+  text-align:center;
+  padding:15px;
+  margin:15px auto;
+  border-radius:10px;
+  background-color:var(--color-dark-white)
 }
 
 
@@ -611,8 +632,17 @@ p {
   .navbar_menu_item:hover {
     border: 0;
     border-radius:0;
-    background-color: #dab3a1;
+    
   }
+
+  .navbar_menu_item.on{
+    color:#b34d08;
+    border: 0;
+    border-radius:0;
+    background-color: var(--color-su);
+  }
+
+
   .section {
     padding: 16px;
     padding-top: 95px;

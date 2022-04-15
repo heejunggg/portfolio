@@ -161,17 +161,20 @@ const maJor = document.querySelector('.major'); //대문
 
     // modal
 
-     const img = document.querySelectorAll('.project_img');
+     /*const img = document.querySelectorAll('.project_img');*/
+     const img = document.querySelectorAll('.work_project a[href="#"]');
      const lightbox = document.querySelector('#lightbox-overlay');
      const lightboxImg = lightbox.querySelector('img');
      
 
      for(var i = 0; i < img.length; i++){
-      img[i].addEventListener('click', function(){
-          const imgNewSrc = this.getAttribute('data-lightbox');
+      img[i].addEventListener('click', function(event){
+          /*const imgNewSrc = this.getAttribute('data-lightbox'); 밑에수정건 */
+          const imgNewSrc = event.currentTarget.querySelector("img").getAttribute('data-lightbox'); 
+
           console.log(imgNewSrc);
   
-      lightboxImg.hasAttribute('src', imgNewSrc);
+      lightboxImg.setAttribute('src', imgNewSrc);
       lightbox.classList.add('visible');
   });
   
@@ -180,4 +183,4 @@ const maJor = document.querySelector('.major'); //대문
   });
   };
   
-  
+ 
