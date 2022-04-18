@@ -126,7 +126,6 @@ p {
 }
 #navbar.navbar--dark {
   background-color: var(--color-navba);
-  /* background-color: var(--color-navba);*/
   padding: 8px;
 }
 .navbar_logo {
@@ -339,26 +338,9 @@ p {
   color: #622b06;
   display:block;
 }
-
 #about{
   position:relative;
 }
-/* 포부,자격증, 경력사항 */
-/*.about_majors{ 
-  display:flex;
-  flex-direction: row;
-  justify-content:space-between;
-  position:absolute;
-  display:none;
-}
-.about_majors.visible{
-  display:flex;
-  margin-top:30px;
-  animation:boxs 6s 5s 1 ease-in;
-}*/
-
-
-
 .about_majors { 
   position: absolute;
   left:50%;
