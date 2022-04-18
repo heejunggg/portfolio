@@ -78,6 +78,7 @@ a {
 ul {
   list-style: none;
   padding-left: 0;
+  margin:0;
 }
 button {
   background: transparent;
@@ -96,8 +97,6 @@ h2 {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
   color: var(--color-black);
- /* margin: 8px 0;*/
-  
 }
 h3 {
   font-size: var(--font-regular);
@@ -127,6 +126,7 @@ p {
 }
 #navbar.navbar--dark {
   background-color: var(--color-navba);
+  /* background-color: var(--color-navba);*/
   padding: 8px;
 }
 .navbar_logo {
@@ -147,7 +147,6 @@ p {
   left:50%;
   top:50%;
   transform:translate(-45%, -50%);
-  
 }
 .logo_name{
   font-size:var(--font-medium);
@@ -160,7 +159,6 @@ p {
   margin: 0;
   margin-right:70px;
 }
-
 .navbar_menu_item {
   padding: 8px 12px;
   margin: 0 4px;
@@ -212,23 +210,17 @@ p {
   border: 5px solid var(--color-su);
   border-radius:50%;
   overflow: hidden;
-
 }
 .home_title{
   color: var(--color-22222);
   margin:20px;
   text-align:center;
 }
-
 .home_title span{
   font-size:var(--font-medium);
   font-family:'Ubuntu', sans-serif;
   font-weight: var(--weight-medium);
-  animation-name:change;
-  animation-duration:3s;
-  animation-delay:0.5s;
-  animation-iteration-count:infinite;
-  animation-timing-function:ease-in;
+  animation:change 3s .5s infinite ease-in;
 }
 @keyframes change{
   0%{color:#3e033a; opacity:100%;}
@@ -237,9 +229,9 @@ p {
   75%{color:#3e033a; opacity:25%;}
   100%{color:#3e033a; opacity:100%;}
 }
-.animate_animated.animate_bounce {
+/*.animate_animated.animate_bounce {
   animation-iteration-count: infinite;
-}
+}*/
 .home_contact {
   text-align:right;
   font-size: var(--font-regular);
@@ -273,16 +265,81 @@ p {
 .major {
   width:100%;
   height:500px;
-  line-height:500px;
+  /*line-height:500px;*/
   border-radius:20px;
-  background-color: var(--color-moon);
+  background-color: #ebccb7;
+  box-shadow: inset 30px 30px 164px 67px #e1bfa8;
+  border: 2px solid #d5ae94;
   transform-origin:bottom;
   transform: rotateX(0deg);
   transition:all .7s ease-in;
+  display:flex;
+  flex-direction: column;
+  justify-content:flex-end;
+  align-items: center;
 }  
 .transform {
   transform: perspective(200px) rotateX(50deg) ;
- }
+ } 
+ /*.about_clickbox{
+  display:inline-block;
+  position:absolute;
+  left:50%;
+  bottom:10%;
+  border-radius:12px;
+  background-color: #ebccb7;;
+  color: #b34d08;
+  cursor:pointer;
+  width:40px;
+  height:57px;
+}
+.about_clickbox:after{
+  content:'';
+  display:block;
+  width:3px;
+  height:10px;
+  background-color:#fff;
+  margin:auto;
+  animation:mouse 1s infinite alternate ease-in-out;
+}
+@keyframes mouse{
+  0%{top:30%;}
+  100%{top:70%;;}
+}*/
+.btn{
+ flex-basis:70%;
+}
+.btn i{
+  display:block;
+  position:absolute; /*대가하고있어*/
+  left:49%;
+  top:80%;
+  font-size:2em;
+  color:#853906;
+  animation:btn_rolling 3s infinite linear;
+}
+.btn i:nth-child(1){animation-delay:0s;}
+.btn i:nth-child(2){animation-delay:0.5s;}
+.btn i:nth-child(3){animation-delay:1s;}
+
+@keyframes btn_rolling {
+  0%{top:60%; opacity:1; transform:scale(1);}
+  50%{top:30%; opacity:0.5; transform:scale(1.5);}
+  100%{top:10%; opacity:0; transform:scale(2);}
+}
+.btn_mouse{
+  flex-basis: 30%;
+  font-size:var(--font-medium);
+  color: #622b06;
+
+}
+.major span{
+  font-weight:var(--weight-regular);
+  font-size:var(--font-small);
+  color: #622b06;
+  display:block;
+}
+
 #about{
   position:relative;
 }
@@ -299,6 +356,8 @@ p {
   margin-top:30px;
   animation:boxs 6s 5s 1 ease-in;
 }*/
+
+
 
 .about_majors { 
   position: absolute;
@@ -344,17 +403,16 @@ p {
   font-weight: var(--weight-semi-bold);
 }
 .major_description{
-  margin:20px 0;
   transform:translateY(20px);
-  line-height:25px;
+  line-height:30px;
 }
 .career_list_item{
   font-family: 'Noto Sans KR', sans-serif;
-  margin: 4px 0;
   font-size:var(--font-regular);
   font-weight: var(--weight-regular);
   color:var(--color-22222);
   text-align:left;
+  line-height:30px;
 }
 
 
@@ -642,7 +700,6 @@ p {
     background-color: var(--color-su);
   }
 
-
   .section {
     padding: 16px;
     padding-top: 95px;
@@ -671,10 +728,13 @@ p {
   }
   .major {
     position: absolute;
-    bottom: -46px;
+    bottom: 20px;
   }
   .major_description{
     transform:translateY(0);
+  }
+  .about_clickbox{
+   bottom:1%;
   }
   .skillset {
     flex-direction: column;

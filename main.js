@@ -32,7 +32,6 @@ window.addEventListener('scroll', () => {
   }
 });
 
-
 // Handle scrolling when tapping on the navbar menu
 // navbar menu를 클릭했을때 해당 내용이 나온다.
 const navbarMenu = document.querySelector('.navbar_menu');
@@ -53,15 +52,6 @@ navbarMenu.addEventListener('click', (event) => {
 });
     
 
-    // 클릭이 되면 우리가 등록한 함수가 호출되게 함.()=>{}
-    // console.log(event.target); 내가클릭한 li 메뉴가 나온다.
-   
-    // dataset 은 index에 data- 넣었던것 다 세트를 말함.
-   // console.log(event.target.dataset.link);
-
-
-// undifne이라고 나올수있다.if(link==null)
-// Button Contact me를 click시 contact section으로 가라.
     const homeContactBtn= document.querySelector('.home_contact');
     homeContactBtn.addEventListener('click', () => {
     scrollIntoView('#contact'); //함수를아래로 했으니까 이제 지정만 해주고..
@@ -100,28 +90,22 @@ navbarMenu.addEventListener('click', (event) => {
     // About 
 const inMauors = document.querySelector('.about_majors'); //박스
 const maJor = document.querySelector('.major'); //대문
-
-
-/*maJor.addEventListener('click', () => {
-    inMauors.classList.add('visible');
-    if (maJor.classList.contains('transform')) {
-      maJor.classList.remove('transform');
-    } else {
-      maJor.classList.add('transform');
-      
-    }
-  });*/
+const btnB = document.querySelector('.btn')
 
   maJor.addEventListener('click', () => {
     if (maJor.classList.contains('transform')) {
       maJor.classList.remove('transform');
       inMauors.classList.remove('visible');
+      
+      
     } else {
       maJor.classList.add('transform');
       inMauors.classList.add('visible');
+      
     }
   });
-      // Arrow를 눌렀을때 위로 올라가기
+      
+    // Arrow를 눌렀을때 위로 올라가기
     arrowUp.addEventListener('click', () => {
         scrollIntoView('#home');
     });
@@ -150,28 +134,23 @@ const maJor = document.querySelector('.major'); //대문
             projects.forEach((project) => {
                 //console.log(project.dataset.type);
                 if(filter === '*' || filter === project.dataset.type){
-                    project.classList.remove('invisible'); //같을때는 선택한것만보여지고
+                    project.classList.remove('invisible'); 
                 } else {
-                    project.classList.add('invisible'); //다를때는 안보여야되는것까지 다 보여진다.
+                    project.classList.add('invisible'); 
                 }
             });
             projectContainer.classList.remove('anim-out');
         },300); 
-     });
+    });
 
     // modal
-
-     /*const img = document.querySelectorAll('.project_img');*/
-     const img = document.querySelectorAll('.work_project a[href="#"]');
-     const lightbox = document.querySelector('#lightbox-overlay');
-     const lightboxImg = lightbox.querySelector('img');
-     
-
-     for(var i = 0; i < img.length; i++){
+    const img = document.querySelectorAll('.work_project a[href="#"]');
+    const lightbox = document.querySelector('#lightbox-overlay');
+    const lightboxImg = lightbox.querySelector('img');
+    
+    for(var i = 0; i < img.length; i++){
       img[i].addEventListener('click', function(event){
-          /*const imgNewSrc = this.getAttribute('data-lightbox'); 밑에수정건 */
           const imgNewSrc = event.currentTarget.querySelector("img").getAttribute('data-lightbox'); 
-
           console.log(imgNewSrc);
   
       lightboxImg.setAttribute('src', imgNewSrc);
@@ -182,5 +161,5 @@ const maJor = document.querySelector('.major'); //대문
       this.classList.remove('visible');
   });
   };
+        
   
- 
