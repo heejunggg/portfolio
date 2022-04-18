@@ -262,80 +262,58 @@ p {
 /* About */
 /* click대문 */
 .major {
-  width:100%;
-  height:500px;
-  /*line-height:500px;*/
-  border-radius:20px;
-  background-color: #ebccb7;
-  box-shadow: inset 30px 30px 164px 67px #e1bfa8;
-  border: 2px solid #d5ae94;
-  transform-origin:bottom;
+  width: 100%;
+  height: 500px;
+  border-radius: 20px;
+  background-color: #f5e5d5;
+  /* background-color: #ebccb7; */
+  box-shadow: inset 30px 30px 100px 10px #e1bfa8;
+  border: 2px solid #e1bea6;
+  transform-origin: bottom;
   transform: rotateX(0deg);
-  transition:all .7s ease-in;
-  display:flex;
-  flex-direction: column;
-  justify-content:flex-end;
-  align-items: center;
-}  
+  transition: all .7s ease-in;
+  position: relative;
+  }  
 .transform {
   transform: perspective(200px) rotateX(50deg) ;
  } 
- /*.about_clickbox{
-  display:inline-block;
-  position:absolute;
-  left:50%;
-  bottom:10%;
-  border-radius:12px;
-  background-color: #ebccb7;;
-  color: #b34d08;
-  cursor:pointer;
-  width:40px;
-  height:57px;
-}
-.about_clickbox:after{
-  content:'';
-  display:block;
-  width:3px;
-  height:10px;
-  background-color:#fff;
-  margin:auto;
-  animation:mouse 1s infinite alternate ease-in-out;
-}
-@keyframes mouse{
-  0%{top:30%;}
-  100%{top:70%;;}
-}*/
-.btn{
- flex-basis:70%;
-}
-.btn i{
-  display:block;
-  position:absolute; /*대가하고있어*/
-  left:49%;
-  top:80%;
-  font-size:2em;
-  color:#853906;
-  animation:btn_rolling 3s infinite linear;
-}
-.btn i:nth-child(1){animation-delay:0s;}
-.btn i:nth-child(2){animation-delay:0.5s;}
-.btn i:nth-child(3){animation-delay:1s;}
-
-@keyframes btn_rolling {
-  0%{top:60%; opacity:1; transform:scale(1);}
-  50%{top:30%; opacity:0.5; transform:scale(1.5);}
-  100%{top:10%; opacity:0; transform:scale(2);}
-}
-.btn_mouse{
-  flex-basis: 30%;
-  font-size:var(--font-medium);
+ .btn_circle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: var(--font-medium);
   color: #622b06;
+  width: 80px;
+  height: 80px;
+  border: 2px solid #ebccb7a6;
+  border-radius: 50%;
+  animation: circle 5s infinite ease-out;
+}
+.btn_circle:nth-child(1){animation-delay:1.2s;}
+.btn_circle:nth-child(2){animation-delay:2.2s;}
+.btn_circle:nth-child(3){animation-delay:3.2s;}
+.btn_circle:nth-child(4){animation-delay:3.2s;}
+.btn_circle:nth-child(5){animation-delay:3.2s;}
 
+@keyframes circle{
+  0%{opacity:1; transform:scale(1);}
+  50%{opacity:0.5; transform:scale(3);}
+  100%{opacity:0.2; transform:scale(3.5);}
+}
+
+.btn_click{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-4%, 15%);
+  width:80px;
+  height:80px;
+  color: #622b06;
 }
 .major span{
   font-weight:var(--weight-regular);
   font-size:var(--font-small);
-  color: #622b06;
   display:block;
 }
 #about{
@@ -396,7 +374,6 @@ p {
   text-align:left;
   line-height:30px;
 }
-
 
 /* Skill */
 
@@ -494,7 +471,7 @@ p {
   position: relative;
   width: 280px;
   height: 250px;
-  margin: 2px;
+  margin: 20px;
   border-radius: 5%;
   background-color: var(--color-light-white);
   display: flex;
@@ -711,9 +688,23 @@ p {
   .major {
     position: absolute;
     bottom: 20px;
+    right: 5px;
   }
   .major_description{
     transform:translateY(0);
+  }
+  .btn_circle_form{
+    position: absolute;
+    top: 62%;
+    left: 37%;
+  }
+  .btn_click{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-55%, 102%);
+    width:80px;
+    height:80px;
   }
   .about_clickbox{
    bottom:1%;
