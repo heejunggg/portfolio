@@ -34,8 +34,8 @@ window.addEventListener('scroll', () => {
 
 // Handle scrolling when tapping on the navbar menu
 // navbar menu를 클릭했을때 해당 내용이 나온다.
-
 const navbarMenu = document.querySelector('.navbar_menu');
+const inMauJors = document.querySelector('.about_majors');
 navbarMenu.addEventListener('click', (event) => {
     const target = event.target;
     const link = target.dataset.link;
@@ -44,13 +44,27 @@ navbarMenu.addEventListener('click', (event) => {
     }
     navbarMenu.classList.remove('open');
     scrollIntoView(link); //함수를아래로 했으니까 이제 지정만 해주고..
-    });
+
+    
+    
+  });
+    
+
+
+
+
+
+
+
+
 
     // Navbar toggle button for small screen
     const navbarToggleBtn = document.querySelector('.navbar_toggle_btn');
     navbarToggleBtn.addEventListener('click', () => {
     navbarMenu.classList.toggle('open');
 });
+    
+
     const homeContactBtn= document.querySelector('.home_contact');
     homeContactBtn.addEventListener('click', () => {
     scrollIntoView('#contact'); //함수를아래로 했으니까 이제 지정만 해주고..
@@ -78,7 +92,7 @@ navbarMenu.addEventListener('click', (event) => {
     // Home의 반정도 왔을때 arrowup의 visible이 보이게 하고 아닐때는 visible이 안보이게하라.
 
     const arrowUp = document.querySelector('.arrow-up');
-    document.addEventListener('scroll', () => {
+   document.addEventListener('scroll', () => {
         if(window.scrollY > homeheight / 2 ){
             arrowUp.classList.add('visible');
         } else{
@@ -86,43 +100,27 @@ navbarMenu.addEventListener('click', (event) => {
         }
     });
 
-    // About in majors
-
-    // visible일때 이 애니메이션을 시작하라..를  어떻게 표현하지.
-      
-    const trigger = new ScrollTrigger.default({
-      trigger: {
-            once: false,
-            offset: {
-                element: {
-                    x: 0,
-                    y: 0.2                
-                }
-            },
-            toggle: {
-                class: {
-                    in: 'animateIn', 
-                    out: 'animateOut'
-                }
-            }
-        }
-    });
-    trigger.add('.data-trigger');
-	
-
-
-
-    // About 대문
-/*const inMauors = document.querySelector('.about_majors'); //박스
-const maJor = document.querySelector('.major'); //대문
+    // About 
+const inMauors = document.querySelector('.about_majors'); //박스
+//const maJor = document.querySelector('.major'); 대문
+const mouseI = document.querySelector('.bnt_click i')
 const btnB = document.querySelector('.btn')
 
-  maJor.addEventListener('click', () => {
+/*mouseI.addEventListener('click', () => {
+  if(mouseI.classList.contains('transform')){
+    mouseI.classList.remove('transform');
+    inMauors.classList.remove('visible');
+  } else {
+    mouseI.classList.add('transform');
+    inMauors.classList.add('visible');
+  }
+});*/
+
+
+/*maJor.addEventListener('click', () => {
     if (maJor.classList.contains('transform')) {
       maJor.classList.remove('transform');
       inMauors.classList.remove('visible');
-    
-      
     } else {
       maJor.classList.add('transform');
       inMauors.classList.add('visible');
