@@ -88,29 +88,20 @@ navbarMenu.addEventListener('click', (event) => {
 
     // About in majors
 
-    // visible일때 이 애니메이션을 시작하라..를  어떻게 표현하지.
-      
-    const trigger = new ScrollTrigger.default({
-      trigger: {
-            once: false,
-            offset: {
-                element: {
-                    x: 0,
-                    y: 0.2                
-                }
-            },
-            toggle: {
-                class: {
-                    in: 'animateIn', 
-                    out: 'animateOut'
-                }
-            }
-        }
-    });
-    trigger.add('.data-trigger');
-	
+    const inMajors = document.querySelector('.in_majors');
+    const aboutHeight  = inMajors.getBoundingClientRect().height;
+    console.log(aboutHeight);
+
+    document.addEventListener('scroll', () => {
+      if (window.scrollY > aboutHeight) {
+        inMajors.classList.add('visible');
+      } else {
+        inMajors.classList.remove('visible');
+      }
+    }); 
 
 
+ 
 
     // About 대문
 /*const inMauors = document.querySelector('.about_majors'); //박스

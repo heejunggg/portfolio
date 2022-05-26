@@ -269,6 +269,7 @@ p {
 .about_majors { 
   display:flex;
   justify-content:space-between;
+  
 }
 
 .major_title{
@@ -287,10 +288,11 @@ p {
   box-shadow:10px 10px 15px rgb(159 148 148 / 28%);
   color:var(--color-logo);
   font-weight: var(--weight-semi-bold);
-
+  
+  
   transform:translateX(-100px);
   opacity:0;
-  animation: in_majors-move 0.5s ease-in-out forwards;
+  
 }
 @keyframes in_majors-move {
   from {
@@ -301,18 +303,9 @@ p {
     opacity:1;
   }
 }
-
-.data-trigger{
-	position: relative;
-	top:50px;
-	opacity:0;
-	transition:0.5s;
+.in_majors.visible {
+  animation: in_majors-move 0.5s ease-in-out forwards; 
 }
-.data-trigger.animateIn{
-	opacity:1;
-	top:0;
-}
-
 
 .in_majors:first-child {
   animation-delay:0.2s;
@@ -642,8 +635,6 @@ p {
     height: auto;
     margin: 20px 0;
   }
-
-  .
 
 
 
