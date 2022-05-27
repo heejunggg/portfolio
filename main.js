@@ -88,7 +88,7 @@ navbarMenu.addEventListener('click', (event) => {
 
     // About in majors
 
-    const inMajors = document.querySelector('.in_majors');
+   /* const inMajors = document.querySelectorAll('.in_majors');
     const aboutHeight  = inMajors.getBoundingClientRect().height;
     console.log(aboutHeight);
 
@@ -98,7 +98,7 @@ navbarMenu.addEventListener('click', (event) => {
       } else {
         inMajors.classList.remove('visible');
       }
-    }); 
+    }); */
 
 
  
